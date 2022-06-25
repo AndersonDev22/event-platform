@@ -1,0 +1,11 @@
+schema: https://api-sa-east-1.graphcms.com/v2/cl4po727p1zcd01xx2eyb5g4e/master
+
+documents: './src/graphql/**/*.graphql'
+generates:
+  ./graphql/generated.ts:
+    plugins:
+      - typescript
+      - typescript-operations
+      - typescript-react-query
+    config:
+      fetcher: fetch
