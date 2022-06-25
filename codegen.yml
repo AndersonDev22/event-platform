@@ -2,10 +2,14 @@ schema: https://api-sa-east-1.graphcms.com/v2/cl4po727p1zcd01xx2eyb5g4e/master
 
 documents: './src/graphql/**/*.graphql'
 generates:
-  ./graphql/generated.ts:
+  ./src/graphql/generated.ts:
     plugins:
       - typescript
       - typescript-operations
-      - typescript-react-query
+      - typescript-react-apollo
     config:
+      reactApolloVersion: 3
+      withHooks: true
+      withHOC: false 
+      withComponent: false
       fetcher: fetch
