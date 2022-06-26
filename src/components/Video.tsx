@@ -1,6 +1,7 @@
-import { useGetLessonBySlugQuery } from "../graphql/generated";
-import { DefaultUi, Player, Youtube } from "@vime/react";
 import { CaretRight, DiscordLogo, FileArrowDown, Lightning } from "phosphor-react";
+import { DefaultUi, Player, Youtube } from "@vime/react";
+import { useGetLessonBySlugQuery } from "../graphql/generated";
+import { Sidebar } from "./Sidebar";
 import '@vime/core/themes/default.css';
 
 interface VideoProps {
@@ -23,16 +24,21 @@ export function Video(props: VideoProps) {
   }
 
   return (
-    <div className="flex-1">
-      <div className="bg-black flex justify-center">
-        <div className="h-full w-full max-w-[1100px] max-h-[60vh] aspect-video">
-          <Player>
-            <Youtube videoId={data.lesson.videoId} />
-            <DefaultUi />
-          </Player>
+    <div className="flex flex-col justify-center items-center">
+      
+        <div className="bg-black w-full max-h-[65vh] max-w-[1440px] flex justify-center">
+          <div className="h-full w-full max-w-[1100px] max-h-[60vh] aspect-video">
+            <Player>
+              <Youtube videoId={data.lesson.videoId} />
+              <DefaultUi />
+            </Player>
+          </div>
+        <div className="flex min-h-full">
+          <Sidebar/>
         </div>
-      </div>
-      <div className="p-8 max-w-[1100px] mx-auto">
+        </div>
+     
+      <div className="p-8 max-w-[1440px] mx-auto">
         <div className="flex items-start gap-16">
           <div className="flex-1">
             <h1 className="text-2xl font-bold">
