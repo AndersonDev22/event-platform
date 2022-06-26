@@ -2,14 +2,15 @@ import { useCreateSubscriberMutation } from "../graphql/generated";
 import { useState, FormEvent } from "react";
 import { useNavigate } from "react-router-dom";
 import { Logo } from "../components/Logo";
+import Group7735 from "../assets/Group7735.png"
 
 export function Subscribe() {
-const navigate = useNavigate()
+  const navigate = useNavigate()
 
   const [name, setName] = useState('');
   const [email, setEmail] = useState('');
 
-  const [createSubscriber, {loading}] = useCreateSubscriberMutation()
+  const [createSubscriber, { loading }] = useCreateSubscriberMutation()
 
   async function handleSubscribe(event: FormEvent) {
     event.preventDefault();
@@ -24,8 +25,8 @@ const navigate = useNavigate()
 
   return (
     <div className="min-h-screen bg-blur bg-cover bg-no-repeat flex flex-col items-center">
-      <div className="w-full max-w-[1100px] flex items-center justify-between mt-20 mx-auto">
-        <div className="max-w-[640px]">
+      <div className="w-full max-w-[1440px] flex items-center justify-between mt-20 mx-auto px-10">
+        <div className="max-w-[640px] mr-10">
           <Logo />
           <h1 className="mt-8 text-[2.5rem] leading-tight">
             Construa uma <strong className="text-blue-500">aplicação completa </strong>, do zero, com <span className="text-blue-500">ReactJS</span>.
@@ -35,7 +36,9 @@ const navigate = useNavigate()
           </p>
         </div>
         <div className="p-8 bg-gray-700 border border-gray-500 rounded">
-          <strong className="text-2xl mb-6 block">Inscreva-se gratuitamente</strong>
+          <strong className="text-2xl mb-6 block">
+            Inscreva-se gratuitamente para assistir as aulas.
+          </strong>
           <form onSubmit={handleSubscribe} className="flex flex-col gap-2 w-full">
             <input
               className="bg-gray-900 rounded px-5 h-14"
@@ -58,7 +61,7 @@ const navigate = useNavigate()
           </form>
         </div>
       </div>
-      <img src="/src/assets/Group7735.png" alt="" className="mt-10" />
+      <img src={Group7735} alt="" className="mt-10" />
     </div>
   )
 }
