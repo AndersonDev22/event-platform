@@ -13,8 +13,9 @@ export function Event() {
       <main className="flex flex-1 p-5">
         {slug
           ? <Video lessonSlug={slug} />
-          : <div className="flex-1">oi</div>} {/*PODEMOS COLOCAR UM LOADING */}
-        {/* <Sidebar /> */}
+          : <div className="flex-1"></div>
+        }
+        <Sidebar/>
       </main>
       <Footer />
     </div>

@@ -14,12 +14,14 @@ export function Subscribe() {
 
   async function handleSubscribe(event: FormEvent) {
     event.preventDefault();
+
     await createSubscriber({
       variables: {
         name,
         email,
       }
     })
+
     navigate('/event')
   }
 
@@ -56,7 +58,8 @@ export function Subscribe() {
               type="submit"
               disabled={loading}
               className="mt-4 bg-green-500 uppercase py-4 rounded font-bold text-sm hover:bg-green-700 transition-colors disabled:opacity-50"
-            >              Garantir minha vaga
+            >              
+            Confirmar e ir para as aulas
             </button>
           </form>
         </div>
