@@ -34,7 +34,7 @@ export function Video(props: VideoProps) {
             </Player>
           </div>
         <div className="flex min-h-full">
-          <Sidebar/>
+          {/* <Sidebar/> */}
         </div>
         </div>
      
