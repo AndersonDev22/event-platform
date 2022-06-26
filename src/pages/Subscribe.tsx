@@ -1,9 +1,10 @@
-import { useCreateSubscriberMutation } from "../graphql/generated";
+
 import { useState, FormEvent } from "react";
 import { useNavigate } from "react-router-dom";
 import { Logo } from "../components/Logo";
-import Group7735 from "../assets/Group7735.png"
-
+import { useCreateSubscriberMutation } from "../graphql/generated";
+import Group7735 from '../assets/Group7735.png'
+ 
 export function Subscribe() {
   const navigate = useNavigate()
 
@@ -22,7 +23,7 @@ export function Subscribe() {
       }
     })
 
-    navigate('/event')
+    navigate('/event/lesson/abertura-do-evento-ignite-lab')
   }
 
   return (
